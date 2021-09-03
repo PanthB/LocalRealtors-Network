@@ -22,6 +22,7 @@ from flask_marshmallow import Marshmallow
 
 
 
+
 basedir = os.path.abspath(os.path.dirname(__file__))
 class Config(object):
     # ...
