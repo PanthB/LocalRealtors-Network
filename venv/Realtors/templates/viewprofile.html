@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Profile
+{% endblock %}
+
+{% block main %}
+
+    <div class = "container">
+        
+        <p class = "bio">Name</p>
+        <p>{{ user.display_name }}</p><br>
+
+        <p class = "bio">About Me</p>
+        <p>{{ user.about }}</p><br>
+
+    </div>    
+
+{% endblock %}

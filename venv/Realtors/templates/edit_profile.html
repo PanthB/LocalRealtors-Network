@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Edit Profile
+{% endblock %}
+
+{% block main %}
+    <div class = "container">
+        <form action="/edit_profile" method="post">
+            {{ form.hidden_tag() }}
+            <p>
+                {{ form.display_name.label(placeholder="Enter Name", class_ = "bio") }}<br>
+                {{ form.display_name(size=32, class_="edit") }}<br>
+                {% for error in form.display_name.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </p>
+            <p>
+                {{ form.about.label(class_ = "bio") }}<br>
+                {{ form.about(rows="3", cols="50", class_="edit about") }}<br>
+                {% for error in form.about.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </p>
+            <p>
+                {{ form.phone_number.label(class_ = "bio") }}<br>
+                {{ form.phone_number(class_="edit") }}<br>
+                {% for error in form.phone_number.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </p>
+            <p>{{ form.save(id = "button2") }}</p>
+        </form>
+        <h1>Add to Your Portfolio</h1>   
+    </div> 
+    
+{% endblock %}

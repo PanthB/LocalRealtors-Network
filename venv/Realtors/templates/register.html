@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+
+    <div margin="auto">
+        <h3 style="color: #082847;">A platform to connect <span style="color:#6a63fe">users</span> with <span style="color:#43b02a">realtors</span>.</h5><br>
+        <p style="color: #082847; font-size: x-large;">Register now and browse realtors in your area!</p><br>
+        <p style="font-size: large;">If you are a realtor, register as a realtor to share your services.</p><br>
+
+        <form action="" method="post" >
+            {{ form.hidden_tag() }}
+            <div class="form-group"><p>
+                {{ form.username(size=32, placeholder="Enter Username", class_ = "form-control") }}<br>
+                {% for error in form.username.errors %}
+                <span style="color: red;">*{{ error }}</span>
+                {% endfor %}
+            </p></div>
+            <p>
+                {{ form.email(size=32, placeholder="Email", class_ = "form-control") }}<br>
+                {% for error in form.email.errors %}
+                <span style="color: red;">*{{ error }}</span>
+                {% endfor %}
+            </p>
+            <p>
+                {{ form.password(size=32, placeholder="Password", class_ = "form-control") }}<br>
+                {% for error in form.password.errors %}
+                <span style="color: red;">*{{ error }}</span>
+                {% endfor %}
+            </p>
+            <p>
+                {{ form.password2(size=32, placeholder="Confirm Password", class_ = "form-control") }}<br>
+                {% for error in form.password2.errors %}
+                <span style="color: red;">*{{ error }}</span>
+                {% endfor %}
+            </p>
+            <p>{{ form.type() }} {{ form.type.label }}</p>
+            <p>{{ form.submit(id = "button1") }}</p>
+        </form>
+    </div>
+    <!--
+    <form action = "/register" method = "post">
+        <div class="form-group">
+        <input name = "username" autofocus class="form-control" placeholder = "Enter Username" type="text">
+        </div>
+        <div class="form-group">
+        <input name = "password" class="form-control" autocomplete="off" placeholder = "Enter Password" type="text">
+        </div>
+        <div class="form-group">
+        <input name = "confirmation" class="form-control" autocomplete="off" placeholder = "Confirm Password" type="text">
+        </div>
+        <p>Are you a Realtor or a User?</p>
+        <input type="radio" id = "realtor" name="user_type" value="Realtor">
+        <label for="realtor">Realtor &nbsp</label>
+        <input type="radio" id = "user" name="user_type" value="User">
+        <label for="user">User</label>
+        <br></br>
+        <button class="btn btn-dark" type="submit">Register</button>
+    </form>-->
+{% endblock %}

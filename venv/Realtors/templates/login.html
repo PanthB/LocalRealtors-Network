@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        <div class="form-group main">
+            <div>
+                <p>
+                    {{ form.username.label }}<br>
+                    {{ form.username(size=32, class_ = "form-control") }}
+                </p>
+            </div>
+            <div>
+                <p>
+                    {{ form.password.label }}<br>
+                    {{ form.password(size=32, class_ = "form-control") }}
+                </p>
+            </div>
+        </div>
+        <div class = "main"><p>{{ form.remember_me() }} {{ form.remember_me.label }}</p></div>
+        <div class = "main"><p>{{ form.submit(id = "button2", class_ = "main") }}</p></div>
+    </form>
+        
+        <!--<div class="form-group main">
+            <input autocomplete="off" autofocus class="form-control" name="username" placeholder="Username" type="text">
+        </div>
+        <div class="form-group main">
+            <input class="form-control" name="password" placeholder="Password" type="password">
+        </div>
+        <button class="btn btn-primary" type="submit">Log In</button>
+    </form>-->
+{% endblock %}
