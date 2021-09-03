@@ -18,8 +18,7 @@ from wtforms.validators import DataRequired, ValidationError, Email, EqualTo, Le
 from flask_migrate import Migrate, current
 from config import Config
 from sqlalchemy.inspection import inspect
-from flask_marshmallow import Marshmallow   
-
+from flask_marshmallow import Marshmallow
 
 
 
